@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CONTENT REVIEW: page title -->
+    <title>Young Explorers | Get to School</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='youngest-game/game.css') }}">
+    <script src="{{ url_for('static', filename='youngest-game/game.js') }}"
+            defer></script>
+</head>
+<body>
+    <header class="game-header">
+        <a class="home-link" href="{{ url_for('home') }}">Home</a>
+        <!-- CONTENT REVIEW: game title -->
+        <h1>Get to School</h1>
+    </header>
+
+    <main class="game">
+        <!-- CONTENT REVIEW: story prompt shown to students -->
+        <p class="prompt" id="prompt">Help Mia get to school! Put the steps in order.</p>
+        <p class="level-label" id="level-label">Level 1 of 2</p>
+
+        <section class="stage" aria-label="Story">
+            <div class="character" id="character" aria-hidden="true">
+                <span class="character-face">🙂</span>
+            </div>
+            <ol class="slots" id="slots" aria-label="Your steps"></ol>
+        </section>
+
+        <section class="cards-section">
+            <h2 class="cards-heading">Steps</h2>
+            <div class="cards" id="cards"></div>
+        </section>
+
+        <div class="actions">
+            <button type="button" class="btn btn-reset" id="reset">Reset</button>
+            <button type="button" class="btn btn-go" id="go">Go</button>
+            <button type="button" class="btn btn-next" id="next" hidden>Next</button>
+        </div>
+
+        <p class="feedback" id="feedback" role="status"></p>
+    </main>
+</body>
+</html>
