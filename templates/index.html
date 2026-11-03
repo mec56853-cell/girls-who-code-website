@@ -8,8 +8,13 @@
     <title>Girls Who Code | Start Learning</title>
 
     <!-- Connect CSS using Flask -->
+    
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+        href="{{ url_for('static', filename='brand.css') }}"> <!-- Brand CSS -->
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"> <!-- Style CSS -->
+
 
     <!-- Connect JavaScript using Flask -->
     <script src="{{ url_for('static', filename='script.js') }}"
@@ -21,14 +26,14 @@
     <!-- Website Header -->
     <header>
         <h1>Girls Who Code</h1>
-        <p>Discover what you can create with code!</p>
+        <p>Explore, create, and solve problems with code!</p>
     </header>
 
     <main>
 
         <!-- Welcome Section -->
         <section class="intro">
-            <h2>Welcome, Future Coders!</h2>
+            <h2>Start Your Coding Adventure!</h2>
 
             <p>
                 Coding is for everyone! Explore the basics,
@@ -85,12 +90,12 @@
 
                 <!-- Oldest Group -->
                 <article class="card">
-                    <h3>Future Innovators</h3>
+                    <h3>Explore Coding & Careers</h3>
 
                     <p>
                         Discover technology and careers.
                     </p>
-
+                    
                     <button data-track="oldest">
                         Explore
                     </button>
