@@ -1,0 +1,75 @@
+
+/* GIRLS WHO CODE - SHARED BRAND STYLES */
+
+:root {
+    /* Official Girl Scout colors */
+    --gs-green: #00B451;
+    --gs-forest: #005640;
+    --gs-star: #D5F267;
+
+    /* Supporting interface colors */
+    --gs-white: #FFFFFF;
+    --gs-background: #F4F8F0;
+    --gs-text: #203B30;
+
+    /* Typography */
+    --font-heading: "Palatino Linotype", Palatino, serif;
+    --font-body: Helvetica, Arial, sans-serif;
+
+    /* Consistent design */
+    --card-radius: 20px;
+    --button-radius: 12px;
+}
+
+/* Shared heading and text styles */
+body {
+    font-family: var(--font-body);
+    color: var(--gs-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+}
+
+.gs-heading {
+    color: var(--gs-forest);
+}
+
+.gs-card {
+    background: var(--gs-white);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(0, 86, 64, 0.08);
+}
+
+/* Shared buttons */
+.gs-button {
+    display: inline-block;
+    background: var(--gs-forest);
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: var(--button-radius);
+    font-family: var(--font-body);
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gs-button:hover {
+    background: #003F2F;
+}
+
+.gs-button:focus-visible {
+    outline: 3px solid var(--gs-green);
+    outline-offset: 3px;
+}
+
+/* Highlight elements */
+.gs-highlight {
+    background: var(--gs-star);
+    color: var(--gs-forest);
+    border-radius: 12px;
+    padding: 12px;
+}

@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Maya's Coding Adventure</title>
+
+    <!-- Shared Girl Scout branding -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='brand.css') }}">
+
+    <!-- Lesson-specific styling -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='youngest-game/lesson.css') }}">
+
+    <script src="{{ url_for('static',
+          filename='youngest-game/lesson.js') }}"
+          defer></script>
+</head>
+
+
+<body>
+    <header class="lesson-header">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('youngest_game') }}">
+            Play Game
+        </a>
+    </header>
+
+    <main class="storybook">
+        <h1>Maya's Coding Adventure!</h1>
+
+        <p class="subtitle">
+            A Brownie Scout learns about coding!
+        </p>
+
+        <div class="story-card">
+
+            <!-- Story illustration -->
+            <div class="story-picture"
+                 id="story-picture"
+                 aria-hidden="true">
+                🌼
+            </div>
+
+            <!-- Story pages -->
+            <section class="story-page active">
+                <h2>Meet Maya! 👋</h2>
+                <p>
+                    Maya is a Brownie Scout who loves adventures!
+                </p>
+                <p>
+                    Today, Maya has a big mission: get ready for her Girl Scout meeting!
+                    But first, she needs a plan.
+                </p>
+                <p>
+                    Did you know computers need plans, too? 
+                </p>
+                <p>
+                    They're called algorithms (al-go-ri-th-ims)!
+                </p>
+                <p>
+                    Algorithms are lists of instructions that tell computers what to do.
+                
+                </p>
+            </section>
+
+            <section class="story-page" hidden>
+                <h2>First, Next, Last 🎒</h2>
+                <p>
+                    Maya needs to:
+                </p>
+                <p>
+                    1.	Wake up! ⏰
+                </p>
+                <p>
+                    2.	Put on her Brownie vest! 👕
+                </p>
+                <p>
+                    3.	Go to her meeting! 🌟
+                </p>
+                <p>
+                    Maya has to do things in the right order.
+                </p>
+                <p>
+                    In coding, this is called sequencing!
+                    Computers follow instructions in order, just like Maya!
+                    
+                </p>
+            </section>
+
+            <section class="story-page" hidden>
+                <h2>Again and Again 🔁</h2>
+                <p>
+                    Every week, Maya gets ready for her Girl Scout meeting.
+                </p>
+                <p>
+                    Wake up. Get dressed. Go to her meeting!
+                </p>
+                <p>
+                    Instead of writing the same instructions again and again, a programmer can tell a computer to repeat them.
+                </p>
+                <p>
+                    That's called a loop!
+
+                </p>
+            </section>
+
+            <section class="story-page" hidden>
+                <h2>Oops! A Bug! 🐛</h2>
+                <p>
+                    Oh no! Maya's plan says to go to her meeting before getting dressed!
+                </p>
+                <p>
+                    That doesn't make sense!
+                </p>
+                <p>
+                    Maya spots the mistake and fixes her plan.
+                </p>
+                <p>
+                    Programmers call mistakes in code bugs (bugs are little mistakes)!
+                    Finding and fixing them is called debugging!
+
+                </p>
+            </section>
+
+            <section class="story-page" hidden>
+                <h2>You're a Coder! 💻</h2>
+                <p>
+                    Maya learned three coding superpowers!
+                </p>
+                <p>
+                    🌟 Sequencing: Put instructions in order.
+                </p>
+                <p>
+                    🔁 Loops: Repeat instructions.
+                </p>
+                <p>
+                    🐛 Debugging: Find and fix mistakes.
+                </p>
+                <p>
+                    When you tell a computer what to do, you're coding!
+                </p>
+                <p>
+                    Now it's your turn! Help Maya get ready by playing the sequencing game! 🎮
+
+                </p>
+            </section>
+
+            <!-- Navigation -->
+            <div class="story-controls">
+                <button id="back-btn" type="button">
+                    ← Back
+                </button>
+
+                <span id="page-count"
+                      aria-live="polite">
+                    Page 1 of 5
+                </span>
+
+                <button id="next-btn" type="button">
+                    Next →
+                </button>
+            </div>
+
+            <a id="play-link"
+               class="play-link"
+               href="{{ url_for('youngest_game') }}"
+               hidden>
+                🎮 Play the Game!
+            </a>
+        </div>
+    </main>
+</body>
+</html>
