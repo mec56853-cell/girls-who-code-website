@@ -8,7 +8,11 @@
     <title>Girls Who Code | Start Learning</title>
 
     <!-- Connect CSS using Flask -->
-    
+    <link
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='images/favicon.png') }}"
+    >
     <link rel="stylesheet"
         href="{{ url_for('static', filename='brand.css') }}"> <!-- Brand CSS -->
 
@@ -25,8 +29,18 @@
 
     <!-- Website Header -->
     <header>
-        <h1>Girls Who Code</h1>
-        <p>Explore, create, and solve problems with code!</p>
+        <div class="header-brand">
+            <img
+                src="{{ url_for('static', filename='images/gs-logo.png') }}"
+                alt="Girl Scouts logo"
+                class="site-logo"
+            >
+    
+            <div class="header-text">
+                <h1>Girls Who Code</h1>
+                <p>Explore, create, and solve problems with code!</p>
+            </div>
+        </div>
     </header>
 
     <main>

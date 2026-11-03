@@ -16,19 +16,38 @@ body {
 header {
   background: #005640;
   color: white;
-  padding: 40px 20px;
-  text-align: center;
+  padding: 30px 20px;
 }
 
-header h1 {
-  font-family: var(--font-heading, "Palatino Linotype", Palatino, serif);
-  font-size: clamp(32px, 5vw, 52px);
-  margin: 0 0 12px;
+.header-brand {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
-header p {
-  font-size: 19px;
+.site-logo {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.header-text h1 {
+  margin: 0 0 10px;
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: clamp(32px, 5vw, 56px);
+  color: white;
+}
+
+.header-text p {
   margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 22px;
+  color: white;
 }
 
 /* Main content */
