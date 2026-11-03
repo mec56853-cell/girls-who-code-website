@@ -1,265 +1,360 @@
-* {
-  box-sizing: border-box;
+
+/* ==========================================
+   YOUNGEST GAME - GIRL SCOUT BRAND STYLING
+   ========================================== */
+
+   * {
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  color: #1d1b32;
-  background: linear-gradient(#fff6c8, #c8f0ff);
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body, Helvetica, Arial, sans-serif);
+    color: var(--gs-text, #203B30);
+    background: linear-gradient(
+        160deg,
+        #F4F8F0,
+        #D5F267
+    );
 }
 
+/* HEADER AND NAVIGATION */
+
 .game-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  padding: 20px 16px 8px;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 20px 16px 8px;
+    text-align: center;
 }
 
 .game-header h1 {
-  margin: 0;
-  font-size: 2rem;
+    margin: 0;
+    font-family: var(
+        --font-heading,
+        "Palatino Linotype", Palatino, serif
+    );
+    font-size: 2rem;
+    color: var(--gs-forest, #005640);
 }
 
 .home-link,
+.lesson-link,
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 56px;
-  min-width: 56px;
-  padding: 12px 24px;
-  border-radius: 16px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  border: 4px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    min-width: 56px;
+    padding: 12px 24px;
+    border-radius: 16px;
+    font-family: var(--font-body, Helvetica, Arial, sans-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: 4px solid transparent;
 }
 
-.home-link {
-  background: #ffffff;
-  color: #3b2d86;
-  border-color: #3b2d86;
+.home-link,
+.lesson-link {
+    background: #FFFFFF;
+    color: var(--gs-forest, #005640);
+    border-color: var(--gs-forest, #005640);
 }
+
+.home-link:hover,
+.lesson-link:hover {
+    background: var(--gs-star, #D5F267);
+}
+
+/* GAME CONTENT */
 
 .game {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 8px 16px 40px;
-  text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 8px 16px 40px;
+    text-align: center;
 }
 
 .prompt {
-  font-size: 1.4rem;
-  margin: 8px 0;
+    font-size: 1.4rem;
+    margin: 8px 0;
 }
 
 .level-label {
-  font-size: 1.1rem;
-  margin: 0 0 16px;
-  color: #3b2d86;
-  font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 16px;
+    color: var(--gs-forest, #005640);
+    font-weight: 700;
 }
+
+/* GAME STAGE */
 
 .stage {
-  display: grid;
-  gap: 20px;
-  justify-items: center;
-  margin-bottom: 24px;
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+    margin-bottom: 24px;
 }
 
+/* MAYA CHARACTER */
+
 .character {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #ffd4ef;
-  border: 6px solid #e56bb0;
-  display: grid;
-  place-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--gs-star, #D5F267);
+    border: 6px solid var(--gs-green, #00B451);
+    display: grid;
+    place-items: center;
 }
 
 .character-face {
-  font-size: 4rem;
-  line-height: 1;
+    font-size: 4rem;
+    line-height: 1;
 }
 
 .character.celebrate {
-  animation: bounce 0.6s ease-in-out 3;
+    animation: bounce 0.6s ease-in-out 3;
 }
 
 .character.oops {
-  animation: shake 0.4s ease-in-out 2;
+    animation: shake 0.4s ease-in-out 2;
 }
 
+/* SEQUENCE SLOTS */
+
 .slots {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
 }
 
 .slot {
-  width: 140px;
-  min-height: 120px;
-  border-radius: 20px;
-  border: 4px dashed #3b2d86;
-  background: #ffffffcc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #3b2d86;
-  cursor: default;
+    width: 140px;
+    min-height: 120px;
+    border-radius: 20px;
+    border: 4px dashed var(--gs-forest, #005640);
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gs-forest, #005640);
+    cursor: default;
 }
 
 .slot.filled {
-  border-style: solid;
-  background: #e7dcff;
-  cursor: pointer;
+    border-style: solid;
+    background: #E2F5EB;
+    cursor: pointer;
 }
 
 .slot .slot-emoji {
-  font-size: 2.4rem;
-  line-height: 1;
+    font-size: 2.4rem;
+    line-height: 1;
 }
 
+/* GAME CARDS */
+
 .cards-heading {
-  font-size: 1.2rem;
-  margin: 0 0 12px;
+    font-family: var(
+        --font-heading,
+        "Palatino Linotype", Palatino, serif
+    );
+    color: var(--gs-forest, #005640);
+    font-size: 1.2rem;
+    margin: 0 0 12px;
 }
 
 .cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 .step-card {
-  width: 140px;
-  min-height: 120px;
-  border-radius: 20px;
-  border: 4px solid #1d1b32;
-  background: #ffe566;
-  color: #1d1b32;
-  font-size: 1.15rem;
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
+    width: 140px;
+    min-height: 120px;
+    border-radius: 20px;
+    border: 4px solid var(--gs-forest, #005640);
+    background: var(--gs-star, #D5F267);
+    color: var(--gs-forest, #005640);
+    font-family: var(--font-body, Helvetica, Arial, sans-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
 }
 
 .step-card:nth-child(2n) {
-  background: #7ce0a8;
+    background: #E2F5EB;
 }
 
 .step-card:nth-child(3n) {
-  background: #8ec8ff;
+    background: #D5F267;
 }
 
 .step-card:nth-child(4n) {
-  background: #ffb3d9;
+    background: #FFFFFF;
 }
 
 .step-card .step-emoji {
-  font-size: 2.4rem;
-  line-height: 1;
+    font-size: 2.4rem;
+    line-height: 1;
 }
+
+/* HIDE INACTIVE ELEMENTS */
 
 [hidden] {
-  display: none !important;
+    display: none !important;
 }
 
+/* ACTION BUTTONS */
+
 .actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  margin: 28px 0 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin: 28px 0 12px;
 }
 
 .btn-reset {
-  background: #fff;
-  color: #b42318;
-  border-color: #b42318;
+    background: #FFFFFF;
+    color: var(--gs-forest, #005640);
+    border-color: var(--gs-forest, #005640);
 }
 
 .btn-go,
 .btn-next {
-  background: #1f9d55;
-  color: #fff;
-  border-color: #146c3a;
-  min-width: 140px;
+    background: var(--gs-forest, #005640);
+    color: #FFFFFF;
+    border-color: var(--gs-forest, #005640);
+    min-width: 140px;
+}
+
+.btn-go:hover:not(:disabled),
+.btn-next:hover:not(:disabled) {
+    background: #003F2F;
 }
 
 .btn:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
+    opacity: 0.45;
+    cursor: not-allowed;
 }
 
+/* HOVER INTERACTIONS */
+
 .home-link:hover,
+.lesson-link:hover,
 .btn:hover:not(:disabled),
 .step-card:hover,
 .slot.filled:hover {
-  transform: translateY(-2px);
+    transform: translateY(-2px);
 }
 
+/* ACCESSIBILITY */
+
 .home-link:focus-visible,
+.lesson-link:focus-visible,
 .btn:focus-visible,
 .step-card:focus-visible,
 .slot.filled:focus-visible {
-  outline: 4px solid #191919;
-  outline-offset: 3px;
+    outline: 4px solid var(--gs-forest, #005640);
+    outline-offset: 3px;
 }
 
+/* GAME FEEDBACK */
+
 .feedback {
-  min-height: 2rem;
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 8px 0 0;
+    min-height: 2rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 8px 0 0;
 }
 
 .feedback.ok {
-  color: #146c3a;
+    color: var(--gs-forest, #005640);
 }
 
 .feedback.try {
-  color: #9a3412;
+    color: #9A3412;
 }
+
+/* CELEBRATION ANIMATION */
 
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-14px); }
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-14px);
+    }
 }
+
+/* ERROR ANIMATION */
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-8px); }
-  75% { transform: translateX(8px); }
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
 }
 
+/* REDUCED MOTION ACCESSIBILITY */
+
 @media (prefers-reduced-motion: reduce) {
-  .character.celebrate,
-  .character.oops,
-  .home-link:hover,
-  .btn:hover:not(:disabled),
-  .step-card:hover,
-  .slot.filled:hover {
-    animation: none;
-    transform: none;
-  }
+    .character.celebrate,
+    .character.oops,
+    .home-link:hover,
+    .lesson-link:hover,
+    .btn:hover:not(:disabled),
+    .step-card:hover,
+    .slot.filled:hover {
+        animation: none;
+        transform: none;
+    }
+}
+
+/* SMALL SCREEN ADJUSTMENTS */
+
+@media (max-width: 600px) {
+    .game-header {
+        gap: 10px;
+    }
+
+    .game-header h1 {
+        width: 100%;
+    }
+
+    .slot,
+    .step-card {
+        width: 125px;
+        min-height: 110px;
+    }
 }

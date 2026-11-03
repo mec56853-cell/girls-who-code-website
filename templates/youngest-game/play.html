@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CONTENT REVIEW: page title -->
-    <title>Young Explorers | Get to School</title>
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='youngest-game/game.css') }}">
-    <script src="{{ url_for('static', filename='youngest-game/game.js') }}"
-            defer></script>
+    
+<title> Young Explorers | Maya's Girl Scout Adventure</title>
+
+<!-- Shared Girl Scout branding -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='brand.css') }}">
+
+<!-- Youngest game-specific styling -->
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='youngest-game/game.css') }}">
+
+<script src="{{ url_for('static', filename='youngest-game/game.js') }}"
+        defer></script>
+
 </head>
 <body>
     <header class="game-header">
         <a class="home-link" href="{{ url_for('home') }}">Home</a>
+        <a class="lesson-link" href="{{ url_for('youngest_lesson') }}">Lesson</a>
         <!-- CONTENT REVIEW: game title -->
-        <h1>Get to School</h1>
+        <h1> Get to Girl Scouts! 🍀</h1>
     </header>
 
     <main class="game">
         <!-- CONTENT REVIEW: story prompt shown to students -->
-        <p class="prompt" id="prompt">Help Mia get to school! Put the steps in order.</p>
+        <p class="prompt" id="prompt">Help Mia get to Girl Scouts! Put the steps in order.</p>
         <p class="level-label" id="level-label">Level 1 of 2</p>
 
         <section class="stage" aria-label="Story">

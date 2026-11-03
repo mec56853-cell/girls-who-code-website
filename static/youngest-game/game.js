@@ -1,25 +1,45 @@
 (function () {
   // CONTENT REVIEW: placeholder story steps for educators to rewrite.
-  const STEPS = {
-    wake: { id: "wake", emoji: "⏰", label: "Wake" },
-    dress: { id: "dress", emoji: "👕", label: "Dress" },
-    eat: { id: "eat", emoji: "🍎", label: "Eat" },
-    school: { id: "school", emoji: "🏫", label: "School" },
-  };
+ 
+const STEPS = {
+  wake: {
+      id: "wake",
+      emoji: "⏰",
+      label: "Wake Up"
+  },
+  dress: {
+      id: "dress",
+      emoji: "🦺",
+      label: "Brownie Vest"
+  },
+  pack: {
+      id: "pack",
+      emoji: "🎒",
+      label: "Pack Bag"
+  },
+  meeting: {
+      id: "meeting",
+      emoji: "🍀",
+      label: "Girl Scout Meeting"
+  }
+};
+
 
   // CONTENT REVIEW: same get-to-school story, two difficulty levels.
-  const LEVELS = [
-    {
+ 
+const LEVELS = [
+  {
       id: 1,
-      order: ["wake", "dress", "school"],
-      prompt: "Help Mia get to school! Put the steps in order.",
-    },
-    {
+      order: ["wake", "dress", "meeting"],
+      prompt: "Help Maya get to her Girl Scout meeting! Put the steps in order."
+  },
+  {
       id: 2,
-      order: ["wake", "dress", "eat", "school"],
-      prompt: "Help Mia get to school! Put the steps in order.",
-    },
-  ];
+      order: ["wake", "dress", "pack", "meeting"],
+      prompt: "Maya needs to pack her bag, too! Put all four steps in order."
+  }
+];
+
 
   const promptEl = document.getElementById("prompt");
   const levelLabel = document.getElementById("level-label");
@@ -197,7 +217,7 @@
         nextBtn.focus();
       } else {
         nextBtn.hidden = true;
-        setFeedback("You did it! Mia made it to school!", "ok");
+        setFeedback("You did it! Maya made it to her Girl Scout meeting! 🍀", "ok");
       }
     } else {
       character.classList.add("oops");

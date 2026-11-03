@@ -1,0 +1,148 @@
+
+/* MAYA'S STORYBOOK - GIRL SCOUT BRANDING */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body, Helvetica, Arial, sans-serif);
+    background: linear-gradient(
+        160deg, #F4F8F0, #D5F267
+    );
+    color: var(--gs-text, #203B30);
+    min-height: 100vh;
+}
+
+/* Navigation */
+.lesson-header {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.lesson-header a {
+    background: white;
+    border: 3px solid var(--gs-forest, #005640);
+    border-radius: 15px;
+    padding: 12px 22px;
+    color: var(--gs-forest, #005640);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Storybook */
+.storybook {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-family: var(
+        --font-heading,
+        "Palatino Linotype", Palatino, serif
+    );
+    color: var(--gs-forest, #005640);
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 46px);
+}
+
+.subtitle {
+    font-size: 20px;
+}
+
+.story-card {
+    background: white;
+    border-radius: 30px;
+    padding: 30px;
+    margin-top: 25px;
+    box-shadow: 0 8px 25px rgba(0, 86, 64, 0.12);
+}
+
+.story-picture {
+    font-size: 90px;
+    background: var(--gs-star, #D5F267);
+    border-radius: 25px;
+    padding: 22px;
+    margin-bottom: 25px;
+}
+
+.story-page h2 {
+    color: var(--gs-forest, #005640);
+    font-size: 30px;
+}
+
+.story-page p {
+    font-size: 23px;
+    line-height: 1.6;
+}
+
+/* Hide inactive story pages */
+.story-page[hidden],
+.play-link[hidden] {
+    display: none;
+}
+
+/* Navigation buttons */
+.story-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+button, .play-link {
+    border: none;
+    border-radius: 14px;
+    background: var(--gs-forest, #005640);
+    color: white;
+    font-family: var(--font-body, Helvetica, Arial, sans-serif);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003F2F;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* Play the Game button */
+.play-link {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    background: var(--gs-forest, #005640);
+}
+
+/* Accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--gs-green, #00B451);
+    outline-offset: 3px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .story-card {
+        padding: 18px;
+    }
+
+    .story-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+

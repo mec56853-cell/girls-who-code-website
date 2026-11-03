@@ -12,5 +12,11 @@ def home():
 def youngest_game():
     return render_template("youngest-game/play.html")
 
+
+@app.route("/youngest-game/lesson")
+def youngest_lesson():
+    return render_template("youngest-game/lesson.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
