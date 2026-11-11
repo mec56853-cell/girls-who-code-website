@@ -3,10 +3,68 @@
 }
 
 body {
+    --page-start: #F4F8F0;
+    --page-end: #D5F267;
+    --theme-accent: #005640;
+    --theme-soft: #E2F5EB;
+    --trail-ground: #DCECC8;
+    --trail-ground-alt: #D2E6BA;
+    --trail-border: #005640;
+    --obstacle-cell: #B8D39C;
+    --goal-cell: #D5F267;
     margin: 0;
     min-height: 100vh;
-    background: linear-gradient(150deg, #F4F8F0 0%, #E2F5EB 52%, #D5F267 100%);
+    background: linear-gradient(150deg, var(--page-start) 0%, var(--theme-soft) 52%, var(--page-end) 100%);
     color: var(--gs-text, #203B30);
+    transition: background 260ms ease;
+}
+
+body[data-forest="camping"] {
+    --page-start: #FFF7DE;
+    --page-end: #D8E9A8;
+    --theme-accent: #7A4B12;
+    --theme-soft: #F5E8BE;
+    --trail-ground: #E5EFCB;
+    --trail-ground-alt: #D7E6B8;
+    --trail-border: #315B35;
+    --obstacle-cell: #F3D9A4;
+    --goal-cell: #FFE49A;
+}
+
+body[data-forest="hiking"] {
+    --page-start: #E9F4F8;
+    --page-end: #B9D5DD;
+    --theme-accent: #315D70;
+    --theme-soft: #DCECF0;
+    --trail-ground: #DDE8D8;
+    --trail-ground-alt: #CCDCC9;
+    --trail-border: #315D70;
+    --obstacle-cell: #D5D8D7;
+    --goal-cell: #F1D578;
+}
+
+body[data-forest="wildlife"] {
+    --page-start: #EDF8F1;
+    --page-end: #D9C9E8;
+    --theme-accent: #654177;
+    --theme-soft: #E7DEEE;
+    --trail-ground: #D5E8CF;
+    --trail-ground-alt: #C6DDBF;
+    --trail-border: #35694B;
+    --obstacle-cell: #C9E2DD;
+    --goal-cell: #E6D7A3;
+}
+
+body[data-forest="troop"] {
+    --page-start: #FFF0E8;
+    --page-end: #F5CBA7;
+    --theme-accent: #8B3E2F;
+    --theme-soft: #F9DED1;
+    --trail-ground: #E8E0BA;
+    --trail-ground-alt: #DCD3A8;
+    --trail-border: #6C4932;
+    --obstacle-cell: #F4C7A5;
+    --goal-cell: #F7D66B;
 }
 
 .activity-header {
@@ -184,7 +242,7 @@ body {
 
 .route-theme {
     margin: -10px 0 0;
-    color: var(--gs-green, #00B451);
+    color: var(--theme-accent);
     font-weight: 800;
 }
 
@@ -204,9 +262,14 @@ body {
     aspect-ratio: 8 / 6;
     margin: 0 auto;
     overflow: hidden;
-    border: 5px solid var(--gs-forest, #005640);
-    border-radius: 14px;
-    background: #B7D59A;
+    border: 5px solid var(--trail-border);
+    border-radius: 18px;
+    background: var(--trail-ground);
+    box-shadow: 0 10px 22px rgba(32, 59, 48, 0.16);
+}
+
+.trail-stage {
+    min-width: 0;
 }
 
 .coding-layout {
@@ -220,30 +283,82 @@ body {
     display: grid;
     place-items: center;
     min-width: 0;
-    border: 1px solid rgba(0, 86, 64, 0.22);
-    background: #DCECC8;
+    position: relative;
+    border: 1px solid color-mix(in srgb, var(--trail-border) 24%, transparent);
+    background: var(--trail-ground);
     color: var(--gs-forest, #005640);
     font-size: clamp(1.1rem, 4vw, 2rem);
 }
 
+.trail-cell:nth-child(2n) {
+    background: var(--trail-ground-alt);
+}
+
 .trail-cell.obstacle {
-    background: #A7C78E;
+    background: var(--obstacle-cell);
 }
 
 .trail-cell.goal {
-    background: var(--gs-star, #D5F267);
+    background: var(--goal-cell);
 }
 
 .trail-cell.player {
     background: #FFFFFF;
-    box-shadow: inset 0 0 0 4px var(--gs-green, #00B451);
+    box-shadow: inset 0 0 0 4px var(--gs-green, #00B451), 0 0 0 2px #FFFFFF;
+    z-index: 1;
+}
+
+.trail-icon {
+    display: block;
+    width: 78%;
+    height: 78%;
+    max-width: 58px;
+    max-height: 58px;
+    filter: drop-shadow(0 2px 1px rgba(32, 59, 48, 0.18));
+}
+
+.scout-icon {
+    width: 88%;
+    height: 88%;
+}
+
+.goal-icon {
+    width: 84%;
+    height: 84%;
+}
+
+.trail-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px auto 0;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 9px;
+    border: 1px solid color-mix(in srgb, var(--trail-border) 28%, transparent);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    color: var(--gs-text, #203B30);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.legend-item .trail-icon {
+    width: 24px;
+    height: 24px;
+    filter: none;
 }
 
 .program-panel {
     padding: 18px;
     border: 2px solid var(--gs-forest, #005640);
     border-radius: 12px;
-    background: #F4F8F0;
+    background: color-mix(in srgb, var(--theme-soft) 58%, #FFFFFF);
 }
 
 .program-heading {
@@ -291,6 +406,8 @@ body {
     color: #DCECC8;
     font-family: var(--font-body, Helvetica, Arial, sans-serif);
     font-weight: 400;
+    list-style: none;
+    margin-left: -22px;
 }
 
 .cell-label {
@@ -377,6 +494,22 @@ body {
 
 .control.up {
     grid-column: 2;
+    grid-row: 1;
+}
+
+.control[data-direction="left"] {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.control[data-direction="down"] {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.control[data-direction="right"] {
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .reset-button {

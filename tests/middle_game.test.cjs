@@ -44,9 +44,14 @@ test("all four themed forests are distinct and playable", () => {
     ["Camping", "Hiking", "Wildlife", "Troop adventure"],
   );
   assert.equal(new Set(ROUTES.map((route) => JSON.stringify(route.obstacles))).size, 4);
+  assert.equal(new Set(ROUTES.map((route) => route.theme)).size, 4);
 
   for (const route of ROUTES) {
     assert.ok(route.description.length > 20);
+    assert.equal(route.obstacleIcons.length, 2);
+    assert.equal(route.obstacleNames.length, 2);
+    assert.ok(route.goalIcon);
+    assert.ok(route.goalLabel);
     const path = findPath(route);
     assert.ok(path, `${route.name} should have a path to the campsite`);
 

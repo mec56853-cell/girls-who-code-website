@@ -37,7 +37,7 @@
                 <article>
                     <span class="concept-number">3</span>
                     <h3>Conditions</h3>
-                    <p>The program checks conditions: “Is this space an obstacle?” or “Did we reach the campsite?”</p>
+                    <p>The program checks conditions: “Is this space an obstacle?” or “Did we reach the goal?”</p>
                 </article>
             </div>
             <p class="lesson-callout"><strong>Your code is a sequence:</strong> each numbered movement is an instruction, and Run Code tests the instructions in order.</p>
@@ -47,15 +47,18 @@
             <div class="game-heading">
                 <div>
                     <p class="eyebrow">Forest mission</p>
-                    <h2 id="game-title">Guide Scout to the campsite</h2>
+                    <h2 id="game-title">Guide Scout through the forest</h2>
                     <p class="route-theme"><span id="route-category">Camping</span> · <span id="route-theme">Pinecone Camp</span></p>
                 </div>
                 <p class="coordinates" id="coordinates" aria-live="polite">Location: x 1, y 6</p>
             </div>
-            <p class="instructions" id="route-description">Plan a path around the trees to reach the campfire campsite.</p>
+            <p class="instructions" id="route-description">Weave around campfires and fallen trees to reach the cozy cabin.</p>
 
             <div class="coding-layout">
-                <div class="trail" id="trail" role="grid" aria-label="Forest trail"></div>
+                <div class="trail-stage">
+                    <div class="trail" id="trail" role="grid" aria-label="Forest trail"></div>
+                    <div class="trail-legend" id="trail-legend" aria-label="Trail map key"></div>
+                </div>
 
                 <section class="program-panel" aria-labelledby="program-title">
                     <div class="program-heading">
