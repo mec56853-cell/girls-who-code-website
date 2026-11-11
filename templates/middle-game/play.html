@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle Coders | Code the Character</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brand.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='middle-game/game.css') }}">
+    <script src="{{ url_for('static', filename='middle-game/game.js') }}" defer></script>
+</head>
+<body>
+    <header class="activity-header">
+        <a class="home-link" href="{{ url_for('home') }}">Home</a>
+        <div>
+            <p class="eyebrow">Middle Coders</p>
+            <h1>Code the Character</h1>
+        </div>
+        <span class="status-pill" id="completion-status" aria-live="polite">Incomplete</span>
+    </header>
+
+    <main class="activity-shell">
+        <section class="lesson-panel" aria-labelledby="lesson-title">
+            <p class="eyebrow">Before you play</p>
+            <h2 id="lesson-title">Three ideas power this adventure</h2>
+            <div class="concepts">
+                <article>
+                    <span class="concept-number">1</span>
+                    <h3>Events</h3>
+                    <p>An arrow-key press is an <strong>event</strong>. It tells the computer that something happened.</p>
+                </article>
+                <article>
+                    <span class="concept-number">2</span>
+                    <h3>Coordinates</h3>
+                    <p>The character's location is a coordinate: <strong>x</strong> counts across and <strong>y</strong> counts down.</p>
+                </article>
+                <article>
+                    <span class="concept-number">3</span>
+                    <h3>Conditions</h3>
+                    <p>The program checks conditions: “Is this space an obstacle?” or “Did we reach the campsite?”</p>
+                </article>
+            </div>
+            <p class="lesson-callout"><strong>Your code is a sequence:</strong> each numbered movement is an instruction, and Run Code tests the instructions in order.</p>
+        </section>
+
+        <section class="game-panel" aria-labelledby="game-title">
+            <div class="game-heading">
+                <div>
+                    <p class="eyebrow">Forest mission</p>
+                    <h2 id="game-title">Guide Scout to the campsite</h2>
+                    <p class="route-theme"><span id="route-category">Camping</span> · <span id="route-theme">Pinecone Camp</span></p>
+                </div>
+                <p class="coordinates" id="coordinates" aria-live="polite">Location: x 1, y 6</p>
+            </div>
+            <p class="instructions" id="route-description">Plan a path around the trees to reach the campfire campsite.</p>
+
+            <div class="coding-layout">
+                <div class="trail" id="trail" role="grid" aria-label="Forest trail"></div>
+
+                <section class="program-panel" aria-labelledby="program-title">
+                    <div class="program-heading">
+                        <h3 id="program-title">Your program</h3>
+                        <span id="step-count">0 commands</span>
+                    </div>
+                    <ol class="program-list" id="program-list" aria-label="Movement commands">
+                        <li class="empty-program">Add a direction to start your program.</li>
+                    </ol>
+                    <div class="controls" aria-label="Add movement commands">
+                        <button type="button" class="control up" data-direction="up" aria-label="Add move up command">Up</button>
+                        <button type="button" class="control" data-direction="left" aria-label="Add move left command">Left</button>
+                        <button type="button" class="control" data-direction="down" aria-label="Add move down command">Down</button>
+                        <button type="button" class="control" data-direction="right" aria-label="Add move right command">Right</button>
+                    </div>
+                    <div class="program-actions">
+                        <button type="button" class="run-button" id="run">Run Code</button>
+                        <button type="button" class="reset-button" id="reset">Clear Program</button>
+                        <button type="button" class="undo-button" id="undo">Delete Last</button>
+                        <button type="button" class="new-forest-button" id="new-forest">New Forest</button>
+                    </div>
+                </section>
+            </div>
+            <p class="feedback" id="feedback" role="status" aria-live="polite">The trail is ready. Choose a direction.</p>
+        </section>
+
+        <section class="takeaway" id="takeaway" aria-labelledby="takeaway-title" hidden>
+            <p class="eyebrow">After your test</p>
+            <h2 id="takeaway-title">Take the coder's trail with you</h2>
+            <p>Good programmers plan a route, test one instruction at a time, and debug when the result is not what they expected. Every obstacle is a clue that helps improve the plan.</p>
+        </section>
+    </main>
+</body>
+</html>

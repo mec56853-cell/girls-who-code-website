@@ -4,8 +4,8 @@ const status = document.getElementById("status");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    if (button.dataset.track === "youngest") {
-      window.location.href = "/youngest-game";
+    if (button.dataset.href) {
+      window.location.href = button.dataset.href;
       return;
     }
 
