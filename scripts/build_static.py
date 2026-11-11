@@ -22,6 +22,11 @@ ROUTES = {
         "youngest-game/lesson/index.html",
     ),
     "middle_game": ("middle-game/play.html", "middle-game/index.html"),
+    "ambassadors_game": (
+        "ambassadors-game/play.html",
+        "ambassadors-game/index.html",
+    ),
+    "explore_careers": ("explore-careers.html", "explore-careers/index.html"),
 }
 
 STATIC_URL = re.compile(
@@ -76,10 +81,7 @@ def build(output: Path = DEFAULT_OUTPUT) -> None:
     safe_clean(output)
     output.mkdir(parents=True)
     shutil.copytree(STATIC, output / "static")
-    shutil.copy2(
-        ROOT / "explore-careers.html",
-        output / "explore-careers.html"
-    )
+
     for template_path, output_path in ROUTES.values():
         destination = output / Path(output_path)
         destination.parent.mkdir(parents=True, exist_ok=True)

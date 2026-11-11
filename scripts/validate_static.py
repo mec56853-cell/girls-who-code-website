@@ -14,6 +14,8 @@ EXPECTED_PAGES = {
     Path("youngest-game/index.html"),
     Path("youngest-game/lesson/index.html"),
     Path("middle-game/index.html"),
+    Path("ambassadors-game/index.html"),
+    Path("explore-careers/index.html"),
 }
 REFERENCE = re.compile(r"(?:href|src|data-href)=[\"']([^\"']+)[\"']")
 

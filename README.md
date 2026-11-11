@@ -1,7 +1,15 @@
 # Girls Who Code: Girl Scout Coding Adventures
 Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
 
-An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, and Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**.
+An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**, and Advanced Coders debug conditional logic for a community tech day. A separate careers experience includes a career quiz, robot coding challenge, and career-matching game.
+
+## Advanced Coders: Debug the Launch
+
+Students learn how conditions, comparison operators, AND, and OR control program decisions. Three test-driven rounds ask them to fix the software for volunteer check-in, workshop registration, and a backup venue. The activity provides hints, accessible test-result tables, keyboard-friendly controls, and a replay option.
+
+## Explore Coding & Careers
+
+Students can explore technology interests through a five-question career quiz, program a robot through three grid puzzles, and match four technology careers to their descriptions.
 
 ## Middle Coders: Code the Character Activity
 
@@ -48,7 +56,7 @@ Preview the exact artifact locally:
 python -m http.server 8000 --directory dist
 ```
 
-Then open <http://localhost:8000/>. The validation checks every expected route and every local HTML asset/navigation reference. The Node tests verify that all forest layouts are distinct, stay inside the board, report collisions, and have a valid route from the trailhead to the campsite.
+Then open <http://localhost:8000/>. The validation checks all six public routes and every local HTML asset/navigation reference. The Node tests verify that all forest layouts are distinct, stay inside the board, report collisions, reject the old shared shortcut, and have a valid route from trailhead to destination.
 
 ## Automatic GitHub Pages deployment
 

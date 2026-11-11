@@ -23,5 +23,15 @@ def middle_game():
     return render_template("middle-game/play.html")
 
 
+@app.route("/ambassadors-game/")
+def ambassadors_game():
+    return render_template("ambassadors-game/play.html")
+
+
+@app.route("/explore-careers/")
+def explore_careers():
+    return render_template("explore-careers.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)

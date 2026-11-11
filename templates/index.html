@@ -110,8 +110,21 @@
                         Discover technology and careers.
                     </p>
                     
-                    <button data-track="oldest" type="button">
+                    <button data-track="oldest" data-href="{{ url_for('explore_careers') }}" type="button">
                         Explore
+                    </button>
+                </article>
+
+                <!-- Advanced Group -->
+                <article class="card">
+                    <h3>Advanced Coders</h3>
+
+                    <p>
+                        Debug the code behind a community tech day.
+                    </p>
+
+                    <button data-track="advanced" data-href="{{ url_for('ambassadors_game') }}" type="button">
+                        Start Debugging
                     </button>
                 </article>
 
