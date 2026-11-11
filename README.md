@@ -4,7 +4,7 @@ An interactive coding-education website with age-appropriate Girl Scout learning
 
 Published URL after a repository owner enables Pages: <https://mec56853-cell.github.io/girls-who-code-website/>
 
-## Code the Character
+## Middle Coders: Code the Character Activity
 
 Students build a sequence of arrow commands, run it one step at a time, and guide Scout through a forest grid to a campsite. Four distinct, solvable courses rotate with **New Forest**:
 
