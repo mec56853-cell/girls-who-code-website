@@ -1,6 +1,5 @@
-Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
-
 # Girls Who Code: Girl Scout Coding Adventures
+Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
 
 # Middle Coders: Code the Character Activity
 
