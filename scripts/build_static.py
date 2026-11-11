@@ -76,7 +76,10 @@ def build(output: Path = DEFAULT_OUTPUT) -> None:
     safe_clean(output)
     output.mkdir(parents=True)
     shutil.copytree(STATIC, output / "static")
-
+    shutil.copy2(
+        ROOT / "explore-careers.html",
+        output / "explore-careers.html"
+    )
     for template_path, output_path in ROUTES.values():
         destination = output / Path(output_path)
         destination.parent.mkdir(parents=True, exist_ok=True)
