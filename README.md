@@ -1,9 +1,9 @@
 # Girls Who Code: Girl Scout Coding Adventures
 Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
 
-## Middle Coders: Code the Character Activity
-
 An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with Maya's story, and Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**.
+
+## Middle Coders: Code the Character Activity
 
 Students build a sequence of arrow commands, run it one step at a time, and guide Scout through a forest grid to a campsite. Four distinct, solvable courses rotate with **New Forest**:
 
