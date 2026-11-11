@@ -82,8 +82,19 @@
                     </div>
                 </section>
             </div>
-            <p class="feedback" id="feedback" role="status" aria-live="polite">The trail is ready. Choose a direction.</p>
+            <p class="feedback sr-only" id="feedback" role="status" aria-live="polite">The trail is ready. Choose a direction.</p>
         </section>
+
+        <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title" aria-describedby="result-message">
+            <div class="result-symbol" id="result-symbol" aria-hidden="true"></div>
+            <p class="eyebrow" id="result-eyebrow">Trail check</p>
+            <h2 id="result-title">Try your route again</h2>
+            <p id="result-message"></p>
+            <div class="result-actions">
+                <button type="button" class="result-primary" id="result-primary">Try Again</button>
+                <button type="button" class="result-secondary" id="result-secondary">Clear Program</button>
+            </div>
+        </dialog>
 
         <section class="takeaway" id="takeaway" aria-labelledby="takeaway-title" hidden>
             <p class="eyebrow">After your test</p>

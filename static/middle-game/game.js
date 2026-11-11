@@ -1,7 +1,6 @@
 (() => {
   const WIDTH = 8;
   const HEIGHT = 6;
-  const START = { x: 1, y: 6 };
   const ROUTES = [
     {
       category: "Camping",
@@ -12,9 +11,12 @@
       obstacleNames: ["a campfire", "a fallen tree"],
       goalIcon: "cabin",
       goalLabel: "cabin",
+      start: { x: 1, y: 6 },
+      goal: { x: 8, y: 1 },
       obstacles: [
-        { x: 2, y: 6 }, { x: 3, y: 6 }, { x: 4, y: 5 }, { x: 4, y: 4 },
-        { x: 2, y: 3 }, { x: 3, y: 3 }, { x: 6, y: 2 }, { x: 7, y: 2 },
+        { x: 2, y: 6 }, { x: 3, y: 6 }, { x: 1, y: 4 }, { x: 3, y: 5 },
+        { x: 4, y: 5 }, { x: 3, y: 3 }, { x: 4, y: 3 }, { x: 5, y: 3 },
+        { x: 6, y: 2 }, { x: 7, y: 2 }, { x: 4, y: 1 },
       ],
     },
     {
@@ -26,9 +28,12 @@
       obstacleNames: ["a boulder", "a fallen tree"],
       goalIcon: "badge",
       goalLabel: "hiking badge",
+      start: { x: 8, y: 6 },
+      goal: { x: 1, y: 1 },
       obstacles: [
-        { x: 2, y: 5 }, { x: 3, y: 5 }, { x: 5, y: 4 }, { x: 5, y: 3 },
-        { x: 3, y: 2 }, { x: 4, y: 2 }, { x: 7, y: 3 },
+        { x: 7, y: 6 }, { x: 8, y: 4 }, { x: 6, y: 5 }, { x: 5, y: 5 },
+        { x: 6, y: 3 }, { x: 5, y: 3 }, { x: 4, y: 3 }, { x: 3, y: 2 },
+        { x: 2, y: 2 }, { x: 5, y: 1 },
       ],
     },
     {
@@ -40,9 +45,11 @@
       obstacleNames: ["a pond", "a berry bush"],
       goalIcon: "lookout",
       goalLabel: "wildlife lookout",
+      start: { x: 1, y: 1 },
+      goal: { x: 8, y: 6 },
       obstacles: [
-        { x: 2, y: 6 }, { x: 2, y: 5 }, { x: 4, y: 4 }, { x: 5, y: 4 },
-        { x: 6, y: 2 }, { x: 6, y: 3 }, { x: 7, y: 2 },
+        { x: 3, y: 1 }, { x: 1, y: 3 }, { x: 3, y: 3 }, { x: 4, y: 3 },
+        { x: 5, y: 3 }, { x: 6, y: 4 }, { x: 6, y: 5 }, { x: 8, y: 4 },
       ],
     },
     {
@@ -54,9 +61,12 @@
       obstacleNames: ["a tent", "a trail sign"],
       goalIcon: "troopBadge",
       goalLabel: "troop badge",
+      start: { x: 8, y: 1 },
+      goal: { x: 1, y: 6 },
       obstacles: [
-        { x: 2, y: 6 }, { x: 3, y: 6 }, { x: 3, y: 4 }, { x: 4, y: 4 },
-        { x: 6, y: 3 }, { x: 7, y: 3 }, { x: 5, y: 1 },
+        { x: 7, y: 1 }, { x: 8, y: 3 }, { x: 6, y: 2 }, { x: 5, y: 2 },
+        { x: 6, y: 4 }, { x: 5, y: 4 }, { x: 4, y: 4 }, { x: 3, y: 5 },
+        { x: 2, y: 5 }, { x: 2, y: 6 },
       ],
     },
   ];
@@ -83,7 +93,6 @@
     lookout: `<svg class="trail-icon goal-icon" viewBox="0 0 64 64" aria-hidden="true"><path fill="#7b5232" d="M14 25h36v23H14z"/><path fill="#315d3b" d="M8 27L32 8l24 19z"/><path fill="#b9e5f2" stroke="#fff" stroke-width="2" d="M20 31h10v9H20zm15 0h10v9H35z"/><path fill="#6a442c" d="M27 45h10v14H27z"/></svg>`,
     troopBadge: `<svg class="trail-icon goal-icon" viewBox="0 0 64 64" aria-hidden="true"><path fill="#f0b84f" stroke="#005640" stroke-width="4" d="M32 5l24 14-5 28-19 12-19-12-5-28z"/><path fill="#005640" d="M18 35c0-10 5-16 14-18 9 2 14 8 14 18-6-4-9-3-14 5-5-8-8-9-14-5z"/><circle cx="32" cy="21" r="4" fill="#d5f267"/></svg>`,
   };
-  const GOAL = { x: 8, y: 1 };
   const directions = {
     up: { x: 0, y: -1, label: "MOVE UP" },
     down: { x: 0, y: 1, label: "MOVE DOWN" },
@@ -129,7 +138,7 @@
     return {
       ok: true,
       position: nextPosition,
-      reachedGoal: samePosition(nextPosition, GOAL),
+      reachedGoal: samePosition(nextPosition, route.goal),
     };
   }
 
@@ -137,8 +146,6 @@
     module.exports = {
       WIDTH,
       HEIGHT,
-      START,
-      GOAL,
       ROUTES,
       directions,
       attemptRouteMove,
@@ -165,9 +172,16 @@
   const undoButton = document.getElementById("undo");
   const newForestButton = document.getElementById("new-forest");
   const takeaway = document.getElementById("takeaway");
+  const resultDialog = document.getElementById("result-dialog");
+  const resultSymbol = document.getElementById("result-symbol");
+  const resultEyebrow = document.getElementById("result-eyebrow");
+  const resultTitle = document.getElementById("result-title");
+  const resultMessage = document.getElementById("result-message");
+  const resultPrimary = document.getElementById("result-primary");
+  const resultSecondary = document.getElementById("result-secondary");
   const commandButtons = document.querySelectorAll("[data-direction]");
   let routeIndex = 0;
-  let player = { ...START };
+  let player = { ...ROUTES[0].start };
   let program = [];
   let finished = false;
   let running = false;
@@ -219,6 +233,30 @@
     }
   }
 
+  function closeResult() {
+    if (resultDialog.open) {
+      resultDialog.close();
+    }
+  }
+
+  function showResult(kind, message) {
+    const success = kind === "success";
+    const route = currentRoute();
+    resultDialog.dataset.result = kind;
+    resultSymbol.innerHTML = success ? ICONS[route.goalIcon] : ICONS.scout;
+    resultEyebrow.textContent = success ? "Mission complete" : "Trail check";
+    resultTitle.textContent = success ? "Badge earned!" : "A Girl Scout tries again!";
+    resultMessage.textContent = success
+      ? `${message} You showed courage, confidence, and character by planning, testing, and debugging.`
+      : `${message} A prepared coder checks the command, changes the plan, and tests again.`;
+    resultPrimary.textContent = success ? "Try a New Forest" : "Try Again";
+    resultPrimary.dataset.action = success ? "new-forest" : "try-again";
+    resultSecondary.textContent = success ? "Review My Code" : "Clear Program";
+    resultSecondary.dataset.action = success ? "review" : "clear";
+    resultDialog.showModal();
+    resultPrimary.focus();
+  }
+
   function renderTrail() {
     const route = currentRoute();
     trail.replaceChildren();
@@ -226,7 +264,7 @@
       for (let x = 1; x <= WIDTH; x += 1) {
         const cell = document.createElement("div");
         const position = { x, y };
-        const isGoal = samePosition(position, GOAL);
+        const isGoal = samePosition(position, route.goal);
         const obstacle = obstacleDetails(route, position);
         cell.className = "trail-cell";
         cell.dataset.x = String(x);
@@ -299,7 +337,7 @@
       return;
     }
     if (finished) {
-      player = { ...START };
+      player = { ...currentRoute().start };
       finished = false;
       renderTrail();
     }
@@ -340,7 +378,7 @@
     running = true;
     const activeRun = ++runToken;
     finished = false;
-    player = { ...START };
+    player = { ...currentRoute().start };
     renderTrail();
     renderProgram();
     setFeedback("Running your program one command at a time...", "good");
@@ -356,8 +394,10 @@
       if (!result.ok) {
         running = false;
         renderProgram(index);
-        setFeedback(`Bug on command ${index + 1}: ${result.message}`, "warning");
+        const failureMessage = `Bug on command ${index + 1}: ${result.message}`;
+        setFeedback(failureMessage, "warning");
         takeaway.hidden = false;
+        showResult("failure", failureMessage);
         return;
       }
 
@@ -366,24 +406,29 @@
         finished = true;
         markComplete();
         renderProgram(index);
-        setFeedback(`You reached the ${currentRoute().goalLabel} on command ${index + 1}! Your program works.`, "good");
+        const successMessage = `You reached the ${currentRoute().goalLabel} on command ${index + 1}! Your program works.`;
+        setFeedback(successMessage, "good");
         takeaway.hidden = false;
+        showResult("success", successMessage);
         return;
       }
     }
 
     running = false;
     renderProgram();
-    setFeedback(`Your program ran without hitting an obstacle, but Scout needs more commands to reach the ${currentRoute().goalLabel}.`, "warning");
+    const unfinishedMessage = `Your program ran safely, but Scout needs more commands to reach the ${currentRoute().goalLabel}.`;
+    setFeedback(unfinishedMessage, "warning");
     takeaway.hidden = false;
+    showResult("failure", unfinishedMessage);
   }
 
   function clearProgram() {
+    closeResult();
     runToken += 1;
     running = false;
     finished = false;
     program = [];
-    player = { ...START };
+    player = { ...currentRoute().start };
     renderTrail();
     renderProgram();
     setFeedback("Program cleared. Plan a new route from the trailhead.");
@@ -391,11 +436,12 @@
   }
 
   function loadNewForest() {
+    closeResult();
     runToken += 1;
     running = false;
     routeIndex = (routeIndex + 1) % ROUTES.length;
     program = [];
-    player = { ...START };
+    player = { ...currentRoute().start };
     finished = false;
     renderTrail();
     renderProgram();
@@ -429,6 +475,22 @@
   resetButton.addEventListener("click", clearProgram);
   undoButton.addEventListener("click", deleteLastCommand);
   newForestButton.addEventListener("click", loadNewForest);
+  resultPrimary.addEventListener("click", () => {
+    if (resultPrimary.dataset.action === "new-forest") {
+      loadNewForest();
+      return;
+    }
+    closeResult();
+    undoButton.focus();
+  });
+  resultSecondary.addEventListener("click", () => {
+    if (resultSecondary.dataset.action === "clear") {
+      clearProgram();
+      return;
+    }
+    closeResult();
+    undoButton.focus();
+  });
 
   if (wasCompleted()) {
     completionStatus.textContent = "Complete";
