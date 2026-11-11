@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Coders | Debug the Launch</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brand.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ambassadors-game/game.css') }}">
+    <script src="{{ url_for('static', filename='ambassadors-game/game.js') }}" defer></script>
+</head>
+<body>
+    <header class="activity-header">
+        <div class="shell">
+            <a class="home-link" href="{{ url_for('home') }}">← Home</a>
+            <p class="track-label">Advanced Coders</p>
+            <h1>Debug the Launch</h1>
+            <p>Your troop is hosting a community tech day. Fix three rules in the event software before launch.</p>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="gs-card lesson" aria-labelledby="lesson-title">
+            <h2 id="lesson-title">Mini lesson · How code makes a decision</h2>
+            <p>Imagine your troop has a snack table. The rule is simple. Hand out snacks when there are <strong>at least 10</strong> ready. Otherwise, wait.</p>
+            <pre><code>if (snacksReady &gt;= 10) {
+    handOutSnacks();
+} else {
+    waitForMore();
+}</code></pre>
+            <p>The question in parentheses is the <strong>condition</strong>. If the answer is yes, the code hands out snacks. If the answer is no, it follows the <code>else</code> instruction and waits.</p>
+            <dl class="operators">
+                <div><dt><code>&gt;=</code> At least</dt><dd>10 or more snacks qualifies. Exactly 10 counts.</dd></div>
+                <div><dt><code>&amp;&amp;</code> AND</dt><dd>If you need enough snacks and clean trays, both must be ready.</dd></div>
+                <div><dt><code>||</code> OR</dt><dd>If fruit or crackers are ready, either one works. Having both works too.</dd></div>
+            </dl>
+            <p><strong>Try it in your head.</strong> With 9 snacks, the code waits. With 10 or 11, it hands them out. Trying numbers just below, at, and above the cutoff helps you catch mistakes.</p>
+            <a href="#game-title">Start the challenge ↓</a>
+        </section>
+
+        <section class="gs-card game" aria-labelledby="game-title">
+            <h2 id="game-title" tabindex="-1">Tech Day challenge</h2>
+            <ol class="steps">
+                <li><strong>Read the rule.</strong> It tells you what the event software should do.</li>
+                <li><strong>Pick a condition.</strong> Use the dropdown inside <code>if (…)</code> to change the rule in the code.</li>
+                <li><strong>Click Run tests.</strong> Compare what your code did with what should happen. If a test fails, try a different condition and run the tests again. Pass every test to unlock the next round.</li>
+            </ol>
+            <noscript><p>Enable JavaScript to play the challenge.</p></noscript>
+            <div id="challenge" hidden>
+                <p class="progress" id="progress" role="status"></p>
+                <h3 id="mission" tabindex="-1"></h3>
+                <p id="rule"></p>
+                <label for="condition">Condition to test</label>
+                <div class="editor">
+                    <div><code>if (</code><select id="condition" aria-describedby="rule"></select><code>) {</code></div>
+                    <div class="indent"><code id="true-action"></code></div>
+                    <div><code>} else {</code></div>
+                    <div class="indent"><code id="false-action"></code></div>
+                    <div><code>}</code></div>
+                </div>
+                <details id="hint"><summary>Show a hint</summary><p id="hint-text"></p></details>
+                <div class="actions">
+                    <button class="gs-button" id="run" type="button">Run tests</button>
+                    <button class="gs-button" id="next" type="button" hidden>Next round</button>
+                </div>
+                <p id="feedback" role="status"></p>
+                <div id="results" hidden>
+                    <table>
+                        <caption>Test results</caption>
+                        <thead><tr><th scope="col">Scenario</th><th scope="col">What should happen</th><th scope="col">What your code did</th></tr></thead>
+                        <tbody id="test-rows"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="finished" hidden>
+                <h3 id="finish-title" tabindex="-1">Tech Day is ready to launch!</h3>
+                <p>You fixed all three rules. Try writing one more for your own event. What happens right at the cutoff? What happens when just one condition is true?</p>
+                <button class="gs-button" id="replay" type="button">Play again</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
