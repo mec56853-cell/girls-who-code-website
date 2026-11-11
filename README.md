@@ -2,7 +2,7 @@
 
 An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with Maya's story, and Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**.
 
-Published URL after a repository owner enables Pages: <https://mec56853-cell.github.io/girls-who-code-website/>
+Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
 
 ## Middle Coders: Code the Character Activity
 
