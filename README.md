@@ -2,7 +2,7 @@
 
 Live website: <https://mec56853-cell.github.io/girls-who-code-website/>
 
-An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**, and Advanced Coders debug conditional logic for a community tech day. A separate careers experience includes a career quiz, robot coding challenge, and career-matching game.
+An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**, Advanced Coders debug conditional logic for a community tech day, and Senior Coders finish three lines to publish a Gold Award spotlight. A separate careers experience includes a career quiz, robot coding challenge, and career-matching game.
 
 ## Live activities
 
@@ -10,9 +10,14 @@ An interactive coding-education website with age-appropriate Girl Scout learning
 - [Young Explorers: Coding Lesson](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/lesson/)
 - [Middle Coders: Code the Character](https://mec56853-cell.github.io/girls-who-code-website/middle-game/)
 - [Advanced Coders: Debug the Launch](https://mec56853-cell.github.io/girls-who-code-website/ambassadors-game/)
+- [Senior Coders: Code the Spotlight](https://mec56853-cell.github.io/girls-who-code-website/senior-game/)
 - [Explore Coding & Careers](https://mec56853-cell.github.io/girls-who-code-website/explore-careers/)
 
 All activities are integrated into the main website and automatically republished after a successful push to `main`.
+
+## Senior Coders: Code the Spotlight
+
+High school seniors finish one short program for a troop celebration page. They choose the line that joins a scout's name and Gold Award project, the check that treats 10 service hours as ready, and the badge text the page should show. One run compares their code with the expected spotlight. Hints, a preview card, a results table, and a replay stay on the page.
 
 ## Advanced Coders: Debug the Launch
 
@@ -58,7 +63,7 @@ The static exporter resolves Flask `url_for` expressions to portable relative li
 ```powershell
 python scripts/build_static.py
 python scripts/validate_static.py
-node --test tests/middle_game.test.cjs
+node --test tests/middle_game.test.cjs tests/senior_game.test.cjs
 ```
 
 Preview the exact artifact locally:
@@ -67,7 +72,7 @@ Preview the exact artifact locally:
 python -m http.server 8000 --directory dist
 ```
 
-Then open <http://localhost:8000/>. The validation checks all six public routes and every local HTML asset/navigation reference. The Node tests verify that all forest layouts are distinct, stay inside the board, report collisions, reject the old shared shortcut, and have a valid route from trailhead to destination.
+Then open <http://localhost:8000/>. The validation checks all seven public routes and every local HTML asset/navigation reference. The Node tests verify that all forest layouts are distinct, stay inside the board, report collisions, reject the old shared shortcut, and have a valid route from trailhead to destination. They also check that the Senior Spotlight accepts the three correct lines and rejects the nearby mistakes.
 
 ## Automatic GitHub Pages deployment
 
@@ -84,6 +89,7 @@ static/                        Shared and activity CSS, JavaScript, and images
 scripts/build_static.py        Static Pages exporter
 scripts/validate_static.py     Generated-artifact link and route checks
 tests/middle_game.test.cjs     Forest and movement logic tests
+tests/senior_game.test.cjs     Senior Spotlight answer checks
 .github/workflows/             Automatic Pages build and deployment
 ```
 

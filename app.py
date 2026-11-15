@@ -27,6 +27,10 @@ def middle_game():
 def ambassadors_game():
     return render_template("ambassadors-game/play.html")
 
+@app.route("/senior-game/")
+def senior_game():
+    return render_template("senior-game/play.html")
+
 
 @app.route("/explore-careers/")
 def explore_careers():

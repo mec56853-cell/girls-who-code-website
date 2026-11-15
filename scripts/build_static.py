@@ -26,6 +26,7 @@ ROUTES = {
         "ambassadors-game/play.html",
         "ambassadors-game/index.html",
     ),
+    "senior_game": ("senior-game/play.html", "senior-game/index.html"),
     "explore_careers": ("explore-careers.html", "explore-careers/index.html"),
 }
 

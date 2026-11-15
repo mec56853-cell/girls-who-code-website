@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Coders | Code the Spotlight</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='brand.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='senior-game/game.css') }}">
+    <script src="{{ url_for('static', filename='senior-game/game.js') }}" defer></script>
+</head>
+<body>
+    <header class="activity-header">
+        <div class="shell">
+            <a class="home-link" href="{{ url_for('home') }}">← Home</a>
+            <p class="track-label">Senior Coders</p>
+            <h1>Code the Spotlight</h1>
+            <p>A Senior is presenting a Gold Award project at the troop celebration. Finish three lines so the website can introduce her.</p>
+        </div>
+    </header>
+
+    <main class="shell">
+        <section class="gs-card lesson" aria-labelledby="lesson-title">
+            <h2 id="lesson-title">Mini lesson · Three lines that build a page</h2>
+            <p>The spotlight already knows the scout, the project, and the service hours. You fill in the lines that turn those facts into a page.</p>
+            <dl class="operators">
+                <div><dt><code>+</code> Join text</dt><dd><code>name + " presents " + project</code> makes one sentence from two facts.</dd></div>
+                <div><dt><code>&gt;=</code> At least</dt><dd><code>serviceHours &gt;= 10</code> is true at 10 hours and every number above it.</dd></div>
+                <div><dt><code>?</code> Choose text</dt><dd><code>ready ? "Senior Spotlight" : "In progress"</code> shows the first text when ready is true.</dd></div>
+            </dl>
+            <a href="#game-title">Start the activity ↓</a>
+        </section>
+
+        <section class="gs-card game" aria-labelledby="game-title">
+            <h2 id="game-title" tabindex="-1">Spotlight challenge</h2>
+            <ol class="steps">
+                <li><strong>Read the blank lines.</strong> Each menu is one line of the program.</li>
+                <li><strong>Choose the code.</strong> Pick the line that builds the sentence, the ready check, and the badge.</li>
+                <li><strong>Click Run code.</strong> The preview and the checks update together. Match every check to publish the spotlight.</li>
+            </ol>
+            <noscript><p>Enable JavaScript to finish the spotlight.</p></noscript>
+            <div id="challenge" hidden>
+                <div class="editor" aria-label="Spotlight program">
+                    <div><code>const name = "Jordan";</code></div>
+                    <div><code>const project = "River Cleanup App";</code></div>
+                    <div><code>const serviceHours = 15;</code></div>
+                    <div>
+                        <code>const message = </code>
+                        <select id="message" aria-label="Line that builds the spotlight sentence"></select>
+                        <code>;</code>
+                    </div>
+                    <div>
+                        <code>const ready = </code>
+                        <select id="ready" aria-label="Line that decides whether the project is ready"></select>
+                        <code>;</code>
+                    </div>
+                    <div>
+                        <code>const badge = ready ? </code>
+                        <select id="badge" aria-label="Badge to show when the project is ready"></select>
+                        <code> : "In progress";</code>
+                    </div>
+                </div>
+                <details id="hint">
+                    <summary>Show a hint</summary>
+                    <p>Join the name and the project with the word “presents” between them. Exactly 10 hours should count as ready. The badge text is Senior Spotlight.</p>
+                </details>
+                <div class="actions">
+                    <button class="gs-button" id="run" type="button">Run code</button>
+                </div>
+                <p id="feedback" role="status"></p>
+                <article class="spotlight" id="preview" hidden>
+                    <p class="spotlight-kicker">Troop page preview</p>
+                    <h3 id="preview-message"></h3>
+                    <p id="preview-badge" class="gs-highlight"></p>
+                    <p id="preview-hours"></p>
+                </article>
+                <div id="results" hidden>
+                    <table>
+                        <caption>What your program did</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Check</th>
+                                <th scope="col">Expected</th>
+                                <th scope="col">Your code</th>
+                            </tr>
+                        </thead>
+                        <tbody id="test-rows"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="finished" hidden>
+                <h3 id="finish-title" tabindex="-1">The Senior Spotlight is live</h3>
+                <article class="spotlight">
+                    <p class="spotlight-kicker">Troop page</p>
+                    <h3>Jordan presents River Cleanup App</h3>
+                    <p class="gs-highlight">Senior Spotlight</p>
+                    <p>15 service hours</p>
+                </article>
+                <p>You joined text with <code>+</code>, checked “at least” with <code>&gt;=</code>, and chose the badge the page should show.</p>
+                <button class="gs-button" id="replay" type="button">Try again</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

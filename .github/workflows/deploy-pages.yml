@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: "22"
       - name: Test activity logic
-        run: node --test tests/middle_game.test.cjs
+        run: node --test tests/middle_game.test.cjs tests/senior_game.test.cjs
       - name: Build static site
         run: python scripts/build_static.py
       - name: Validate Pages artifact
