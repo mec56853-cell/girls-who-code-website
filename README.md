@@ -1,7 +1,18 @@
 # Girls Who Code: Girl Scout Coding Adventures
-Published URL: <https://mec56853-cell.github.io/girls-who-code-website/>
+
+Live website: <https://mec56853-cell.github.io/girls-who-code-website/>
 
 An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**, and Advanced Coders debug conditional logic for a community tech day. A separate careers experience includes a career quiz, robot coding challenge, and career-matching game.
+
+## Live activities
+
+- [Young Explorers: Maya's Story](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/)
+- [Young Explorers: Coding Lesson](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/lesson/)
+- [Middle Coders: Code the Character](https://mec56853-cell.github.io/girls-who-code-website/middle-game/)
+- [Advanced Coders: Debug the Launch](https://mec56853-cell.github.io/girls-who-code-website/ambassadors-game/)
+- [Explore Coding & Careers](https://mec56853-cell.github.io/girls-who-code-website/explore-careers/)
+
+All activities are integrated into the main website and automatically republished after a successful push to `main`.
 
 ## Advanced Coders: Debug the Launch
 
@@ -62,7 +73,7 @@ Then open <http://localhost:8000/>. The validation checks all six public routes 
 
 `.github/workflows/deploy-pages.yml` runs after every push to `main` and can also be started manually from the repository's **Actions** tab. It tests the activity, builds and validates `dist/`, uploads only that generated artifact, and deploys through GitHub's `github-pages` environment using GitHub's supported Pages actions and least-privilege job permissions.
 
-For a new repository, an owner must make one one-time selection: open **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**, and save. No deploy branch, committed build output, or secret is required.
+For a new repository, an owner must make a one-time selection: open **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**, and save. No deploy branch, committed build output, or secret is required. This repository is already configured and publishing successfully.
 
 ## Project structure
 
