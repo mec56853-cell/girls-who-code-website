@@ -25,7 +25,7 @@ Students build a sequence of arrow commands, run it one step at a time, and guid
 - Wildlife — Wildlife Watch
 - Troop adventure — Troop Trail
 
-Keyboard arrow keys and large on-screen controls both add commands. Collision and boundary feedback points students toward debugging. Completion is stored only in the student's browser with `localStorage`; the site has no accounts, analytics, or personal-data collection.
+Keyboard arrow keys and large on-screen controls both add commands. Collision and boundary feedback points students toward debugging.
 
 ### 3. Advanced Coders: Debug the Launch
 
