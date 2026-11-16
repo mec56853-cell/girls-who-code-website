@@ -4,30 +4,19 @@ Live website: <https://mec56853-cell.github.io/girls-who-code-website/>
 
 An interactive coding-education website with age-appropriate Girl Scout learning tracks. Young Explorers practice sequencing with **Maya's story**, Middle Coders use events, coordinates, conditions, planning, testing, and debugging in **Code the Character**, Advanced Coders debug conditional logic for a community tech day, and Senior Coders finish three lines to publish a Gold Award spotlight. A separate careers experience includes a career quiz, robot coding challenge, and career-matching game.
 
-## Live activities
+## Activities
 
-- [Young Explorers: Maya's Story](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/)
-- [Young Explorers: Coding Lesson](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/lesson/)
-- [Middle Coders: Code the Character](https://mec56853-cell.github.io/girls-who-code-website/middle-game/)
-- [Advanced Coders: Debug the Launch](https://mec56853-cell.github.io/girls-who-code-website/ambassadors-game/)
-- [Senior Coders: Code the Spotlight](https://mec56853-cell.github.io/girls-who-code-website/senior-game/)
-- [Explore Coding & Careers](https://mec56853-cell.github.io/girls-who-code-website/explore-careers/)
+The activities appear below in the same order as the learning tracks on the homepage. They are all integrated into the main website and automatically republished after a successful push to `main`.
 
-All activities are integrated into the main website and automatically republished after a successful push to `main`.
+### 1. Young Explorers: Maya's Story
 
-## Senior Coders: Code the Spotlight
+**[Play Maya's Story](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/)** · **[Open the coding lesson](https://mec56853-cell.github.io/girls-who-code-website/youngest-game/lesson/)**
 
-High school seniors finish one short program for a troop celebration page. They choose the line that joins a scout's name and Gold Award project, the check that treats 10 service hours as ready, and the badge text the page should show. One run compares their code with the expected spotlight. Hints, a preview card, a results table, and a replay stay on the page.
+Young Explorers learn that computers follow instructions in order. The lesson introduces sequencing, repetition, and debugging through Maya, a Brownie Scout getting ready for her Girl Scout meeting. In the game, students arrange illustrated steps in the correct order to help Maya complete her routine and reach the meeting.
 
-## Advanced Coders: Debug the Launch
+### 2. Middle Coders: Code the Character
 
-Students learn how conditions, comparison operators, AND, and OR control program decisions. Three test-driven rounds ask them to fix the software for volunteer check-in, workshop registration, and a backup venue. The activity provides hints, accessible test-result tables, keyboard-friendly controls, and a replay option.
-
-## Explore Coding & Careers
-
-Students can explore technology interests through a five-question career quiz, program a robot through three grid puzzles, and match four technology careers to their descriptions.
-
-## Middle Coders: Code the Character Activity
+**[Play Code the Character](https://mec56853-cell.github.io/girls-who-code-website/middle-game/)**
 
 Students build a sequence of arrow commands, run it one step at a time, and guide Scout through a forest grid to a campsite. Four distinct, solvable courses rotate with **New Forest**:
 
@@ -37,6 +26,24 @@ Students build a sequence of arrow commands, run it one step at a time, and guid
 - Troop adventure — Troop Trail
 
 Keyboard arrow keys and large on-screen controls both add commands. Collision and boundary feedback points students toward debugging. Completion is stored only in the student's browser with `localStorage`; the site has no accounts, analytics, or personal-data collection.
+
+### 3. Advanced Coders: Debug the Launch
+
+**[Play Debug the Launch](https://mec56853-cell.github.io/girls-who-code-website/ambassadors-game/)**
+
+Students learn how conditions, comparison operators, AND, and OR control program decisions. Three test-driven rounds ask them to fix the software for volunteer check-in, workshop registration, and a backup venue. The activity provides hints, accessible test-result tables, keyboard-friendly controls, and a replay option.
+
+### 4. Senior Coders: Code the Spotlight
+
+**[Play Code the Spotlight](https://mec56853-cell.github.io/girls-who-code-website/senior-game/)**
+
+High school seniors finish one short program for a troop celebration page. They choose the line that joins a scout's name and Gold Award project, the check that treats 10 service hours as ready, and the badge text the page should show. One run compares their code with the expected spotlight. Hints, a preview card, a results table, and a replay stay on the page.
+
+### 5. Explore Coding & Careers
+
+**[Explore Coding & Careers](https://mec56853-cell.github.io/girls-who-code-website/explore-careers/)**
+
+Students explore technology interests through a five-question career quiz, program a robot through three grid puzzles, and match four technology careers to their descriptions.
 
 ## Local setup
 
