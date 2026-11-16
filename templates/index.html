@@ -63,19 +63,6 @@
 
             <div class="card-container">
 
-                <!-- Coding Basics -->
-                <article class="card">
-                    <h3>Coding Basics</h3>
-
-                    <p>
-                        New to coding? Start here!
-                    </p>
-
-                    <button data-track="basics" type="button">
-                        Get Started
-                    </button>
-                </article>
-
                 <!-- Youngest Group -->
                 <article class="card">
                     <h3>Young Explorers</h3>
@@ -98,19 +85,6 @@
                     </p>
 
                     <button data-track="middle" data-href="{{ url_for('middle_game') }}" type="button">
-                        Explore
-                    </button>
-                </article>
-
-                <!-- Oldest Group -->
-                <article class="card">
-                    <h3>Explore Coding & Careers</h3>
-
-                    <p>
-                        Discover technology and careers.
-                    </p>
-                    
-                    <button data-track="oldest" data-href="{{ url_for('explore_careers') }}" type="button">
                         Explore
                     </button>
                 </article>
@@ -141,11 +115,21 @@
                     </button>
                 </article>
 
+                <!-- Coding and careers exploration -->
+                <article class="card">
+                    <h3>Explore Coding & Careers</h3>
+
+                    <p>
+                        Discover technology and careers.
+                    </p>
+
+                    <button data-track="careers" data-href="{{ url_for('explore_careers') }}" type="button">
+                        Explore
+                    </button>
+                </article>
+
             </div>
         </section>
-
-        <!-- Message displayed when a button is clicked -->
-        <p id="status" role="status"></p>
 
     </main>
 
