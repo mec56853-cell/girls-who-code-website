@@ -46,41 +46,25 @@
     <main>
 
         <!-- Welcome Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-copy">
-                <p class="eyebrow">Learn · Create · Explore</p>
-                <h2 id="hero-title">Start Your Coding Adventure!</h2>
+        <section class="intro">
+            <h2>Start Your Coding Adventure!</h2>
 
-                <p>
-                    Coding is for everyone! Build new skills, play games,
-                    and discover how technology can change the world.
-                </p>
-
-                <a class="hero-link" href="#learning-tracks">Choose your adventure <span aria-hidden="true">↓</span></a>
-            </div>
-
-            <figure class="hero-art">
-                <img
-                    src="{{ url_for('static', filename='images/homepage-camp.jpg') }}"
-                    alt="A diverse group of Girl Scouts hiking, pitching a tent, and learning together around a campfire in a sunny forest"
-                    width="1600"
-                    height="900"
-                    fetchpriority="high"
-                >
-            </figure>
+            <p>
+                Coding is for everyone! Explore the basics,
+                play games, and discover how technology
+                can change the world.
+            </p>
         </section>
 
         <!-- Learning Tracks -->
-        <section class="tracks" id="learning-tracks">
+        <section class="tracks">
 
-            <p class="section-kicker">Pick a trail</p>
             <h2>Choose Your Learning Adventure</h2>
 
             <div class="card-container">
 
                 <!-- Youngest Group -->
                 <article class="card">
-                    <span class="card-icon" aria-hidden="true">🌼</span>
                     <h3>Young Explorers</h3>
 
                     <p>
@@ -94,7 +78,6 @@
 
                 <!-- Middle Group -->
                 <article class="card">
-                    <span class="card-icon" aria-hidden="true">🧭</span>
                     <h3>Middle Coders</h3>
 
                     <p>
@@ -108,7 +91,6 @@
 
                 <!-- Advanced Group -->
                 <article class="card">
-                    <span class="card-icon" aria-hidden="true">💻</span>
                     <h3>Advanced Coders</h3>
 
                     <p>
@@ -122,7 +104,6 @@
 
                 <!-- High school seniors -->
                 <article class="card">
-                    <span class="card-icon" aria-hidden="true">✨</span>
                     <h3>Senior Coders</h3>
 
                     <p>
@@ -136,7 +117,6 @@
 
                 <!-- Coding and careers exploration -->
                 <article class="card">
-                    <span class="card-icon" aria-hidden="true">🚀</span>
                     <h3>Explore Coding & Careers</h3>
 
                     <p>
